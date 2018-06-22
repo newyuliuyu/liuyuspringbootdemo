@@ -1,6 +1,8 @@
 package com.liuyu.springboot.liuyuweb.controller;
 
 import com.liuyu.commons.mvc.ModelAndViewFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,15 +22,16 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class TestController {
-
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @RequestMapping("/ftl")
     public ModelAndView ftl(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        //logger.debug("测试log日志是否正常");
+        logger.debug("测试log日志是否正常");
         return ModelAndViewFactory.instance("test").build();
     }
 
     @RequestMapping("/html")
     public ModelAndView html(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("测试log日志是否正常");
         return ModelAndViewFactory.instance("test2").build();
     }
 }

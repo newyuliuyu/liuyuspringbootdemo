@@ -7,4 +7,5 @@ target/
 .externalToolBuilders/
 *.iml
 .tern-project
+*.log
 
