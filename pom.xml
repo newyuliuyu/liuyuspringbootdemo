@@ -8,5 +8,9 @@
     <artifactId>liuyu-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <modules>
+        <module>liuyu-web</module>
+    </modules>
     
 </project>
