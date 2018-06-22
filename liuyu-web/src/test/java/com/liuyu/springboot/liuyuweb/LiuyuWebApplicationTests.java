@@ -1,4 +1,4 @@
-package liuyu.springboot.liuyuweb;
+package com.liuyu.springboot.liuyuweb;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

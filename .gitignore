@@ -5,7 +5,6 @@
 target/
 .springBeans/
 .externalToolBuilders/
-/liuyuspringbootdemo.iml
-/easytnt.iml
+*.iml
 .tern-project
-/easydata.iml
+
