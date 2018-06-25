@@ -4,6 +4,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
 import com.alibaba.fastjson.support.spring.FastJsonJsonView;
+import com.liuyu.commons.mvc.SpringMVCExceptionResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -106,6 +107,13 @@ public class SpringMVCConfig extends WebMvcConfigurationSupport {
         FastJsonJsonView view = new FastJsonJsonView();
         view.setFastJsonConfig(fastJsonConfig);
         return view;
+    }
+
+    @Bean
+    public SpringMVCExceptionResolver exceptionResolver() {
+
+        SpringMVCExceptionResolver exceptionResolver = new SpringMVCExceptionResolver();
+        return exceptionResolver;
     }
 
 
