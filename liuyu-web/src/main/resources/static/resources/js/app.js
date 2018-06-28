@@ -79,7 +79,8 @@ var config = {
         'text': 'js/lib/text2.0.15',
         'utils': 'js/utils/utils',
         'vue': 'js/lib/vue',
-        'pin':'js/lib/jquery.pin'
+        'pin':'js/lib/jquery.pin',
+        'ckeditor':'js/lib/ckeditor/ckeditor'
     },
     map: {
         '*': {
@@ -93,6 +94,9 @@ var config = {
         },
         'pin':{
             deps:['jquery','css!style/pin']
+        },
+        'ckeditor':{
+            deps:['jquery']
         }
     }
 };
