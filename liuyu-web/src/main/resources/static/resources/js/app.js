@@ -72,7 +72,7 @@ var config = {
     optimize: 'none',
     paths: {
         'jquery': jqueryURL,
-        'popper':'js/lib/popper.1.14.3',
+        'Popper':'js/lib/popper.1.14.3',
         'bootstrap':'js/lib/bootstrap/bootstrap',
         'webuploader': 'js/lib/webuploader',
         'css': 'js/lib/css0.1.10',
@@ -89,7 +89,7 @@ var config = {
     },
     shim: {
         'bootstrap': {
-            deps: ['jquery','popper','css!style/bootstrap/bootstrap.min']
+            deps: ['jquery','Popper','css!style/bootstrap/bootstrap.min']
         },
         'pin':{
             deps:['jquery','css!style/pin']

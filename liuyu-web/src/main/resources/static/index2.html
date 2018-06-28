@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns=http://www.w3.org/1999/xhtml>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon.png">
+    <title></title>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <noscript>
+        <style>.html5-wrappers {
+            display: none !important;
+        }</style>
+        <div class="ie-noscript-warning">您的浏览器禁用了脚本，请<a href="">查看这里</a>来启用脚本!或者<a href="/?noscript=1">继续访问</a>.
+        </div>
+    </noscript>
+    <![endif]-->
+    <style>
+    [v-cloak] {
+        display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    var pathName = document.location.pathname;
+    var index = pathName.substr(1).indexOf("/");
+    var myContextPath = pathName.substr(0, index + 1);
+    window["app"] = { rootPath: myContextPath + '/', entry: 'index2' };
+
+    var script = document.createElement("script");
+    script.setAttribute("type", "text/javascript");
+    script.setAttribute("data-main", app.rootPath + "resources/js/app");
+    script.setAttribute("src", app.rootPath + "resources/js/lib/require.js");
+    var heads = document.getElementsByTagName("head");
+    document.documentElement.appendChild(script);
+    </script>
+</head>
+
+<body style="display: none">
+
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-1 pt-1" style="text-align:center;">
+                    <a class="text-muted" href="#" style="padding: 10px 0px;">
+                        <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                    </a>
+                </div>
+                <div class="col-9 text-left">
+                    <div class="main-menu-warp" style="padding: 10px 0px;">
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单1</span>
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单2</span>
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单3</span>
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单4</span>
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单5</span>
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单6</span>
+                    <span class="blog-header-logo text-dark main-menu text-no-line" href="#">主菜单7</span>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-end align-items-center">
+                    <div class="dropdown" style="padding: 10px 0px;">
+                        <p class="dropdown-toggle user-info" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="user-image">
+                                <img src="http://yun.jzjyyun.cn/uploads/avatar/data/63/9/60f47332c05d40ca8e86e76c8112f338_45x45.jpg">
+                            </span>
+                            <span class="user-name">XXXX</span>
+                        </p>
+                        <div class="dropdown-menu" aria-labelledby="userMenu">
+                            <a class="dropdown-item" href="#">个人中心</a>
+                            <a class="dropdown-item" href="#">系统消息</a>
+                            <a class="dropdown-item" href="#">系统帮助</a>
+                            <a class="dropdown-item" href="#">退出系统</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+    </div>
+</body>
+
+</html>
