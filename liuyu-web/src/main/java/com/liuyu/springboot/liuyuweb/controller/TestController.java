@@ -1,5 +1,6 @@
 package com.liuyu.springboot.liuyuweb.controller;
 
+import com.google.common.collect.Maps;
 import com.liuyu.commons.mvc.ModelAndViewFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * ClassName: TestController <br/>
@@ -26,12 +28,20 @@ public class TestController {
     @RequestMapping("/ftl")
     public ModelAndView ftl(HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.debug("测试log日志是否正常");
-        return ModelAndViewFactory.instance("test").build();
+        Map<String,String> mydata = Maps.newHashMap();
+        mydata.put("my1","my1");
+        mydata.put("my2","my2");
+        mydata.put("my3","my3");
+        return ModelAndViewFactory.instance("test").with("mydata",mydata).build();
     }
 
     @RequestMapping("/html")
     public ModelAndView html(HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.debug("测试log日志是否正常");
-        return ModelAndViewFactory.instance("test2").build();
+        Map<String,String> mydata = Maps.newHashMap();
+        mydata.put("my1","my1");
+        mydata.put("my2","my2");
+        mydata.put("my3","my3");
+        return ModelAndViewFactory.instance("test2").with("mydata",mydata).build();
     }
 }

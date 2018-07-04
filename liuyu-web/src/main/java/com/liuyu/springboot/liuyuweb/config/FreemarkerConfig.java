@@ -1,5 +1,7 @@
 package com.liuyu.springboot.liuyuweb.config;
 
+import com.google.common.collect.Maps;
+import com.liuyu.commons.freemarker.FreemarkerStaticModels;
 import freemarker.template.TemplateException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +11,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -24,6 +27,13 @@ import java.util.Properties;
 @Configuration
 public class FreemarkerConfig {
 
+    @Bean
+    public FreemarkerStaticModels freemarkerStaticModels(){
+        Map<String,String> maps = Maps.newHashMap();
+        maps.put("Json","com.liuyu.commons.json.Json2");
+        FreemarkerStaticModels staticModels = new FreemarkerStaticModels(maps);
+        return staticModels;
+    }
 
     @Bean
     public ViewResolver viewResolverFtl() {
@@ -36,6 +46,7 @@ public class FreemarkerConfig {
         resolver.setSuffix(".ftl");
         resolver.setContentType("text/html;charset=UTF-8");
         resolver.setOrder(0);
+        resolver.setAttributesMap(freemarkerStaticModels());
         return resolver;
     }
 
@@ -50,6 +61,7 @@ public class FreemarkerConfig {
         resolver.setOrder(1);
         resolver.setSuffix(".html");
         resolver.setContentType("text/html;charset=UTF-8");
+        resolver.setAttributesMap(freemarkerStaticModels());
         return resolver;
     }
 

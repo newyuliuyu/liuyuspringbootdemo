@@ -30,7 +30,7 @@ import java.util.Map;
  * @version v1.0
  * @since JDK 1.7+
  */
-public class FreemarkerStaticModels extends HashMap<Object, Object> {
+public class FreemarkerStaticModels extends HashMap<String, Object> {
 	private static Logger logger = LoggerFactory.getLogger(FreemarkerStaticModels.class);
 
 	public FreemarkerStaticModels(Map<String, String> classMap) {
