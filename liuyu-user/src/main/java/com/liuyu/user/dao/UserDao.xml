@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuyu.user.dao.UserDao">
+
+
+    <insert id="add">
+	INSERT INTO user_user(id,usercode,phone,email,pwd,nickname,usertype)
+	values(#{user.id},#{user.userCode},#{user.phone},#{user.email},
+	#{user.passworld},#{user.nickName},
+	#{user.userType})
+    </insert>
+    <update id="updatePassworld">
+        UPDATE user_user a
+        SET a.pwd=#{user.passworld}
+        WHERE a.id=#{user.id}
+
+    </update>
+    <update id="update">
+        UPDATE user_user a
+        <set>
+            <if test="user.userCode != null and user.userCode != ''">
+                a.usercode=#{user.userCode},
+            </if>
+            <if test="user.phone != null and user.phone != ''">
+                a.usercode=#{user.phone},
+            </if>
+            <if test="user.email != null and user.email != ''">
+                a.usercode=#{user.email},
+            </if>
+            <if test="user.nickname != null and user.nickname != ''">
+                a.usercode=#{user.nickName},
+            </if>
+            <if test="user.usertype != null">
+                a.usercode=#{user.userType}
+            </if>
+        </set>
+        WHERE a.id=#{user.id}
+    </update>
+
+
+    <resultMap id="user" type="com.liuyu.user.domain.User">
+        <id property="id" column="id"/>
+        <result property="userCode" column="usercode"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="passworld" column="pwd"/>
+        <result property="nickName" column="nickname"/>
+        <result property="userType" column="usertype"/>
+        <result property="valid" column="valid"/>
+    </resultMap>
+
+    <select id="get" resultMap="user">
+		SELECT id,usercode,phone,email,pwd,nickname,usertype,valid
+		FROM user_user a
+		WHERE a.usercode=#{userCode}
+	</select>
+    <select id="getUserWithCode" resultMap="user">
+		SELECT id,usercode,phone,email,pwd,nickname,usertype,valid
+		FROM user_user a
+		WHERE a.usercode=#{userCode}
+	</select>
+    <select id="getUserWithPhone" resultMap="user">
+		SELECT id,usercode,phone,email,pwd,nickname,usertype,valid
+		FROM user_user a
+		WHERE a.phone=#{phone}
+	</select>
+    <select id="getUserWithEmail" resultMap="user">
+		SELECT id,usercode,phone,email,pwd,nickname,usertype,valid
+		FROM user_user a
+		WHERE a.email=#{email}
+	</select>
+    <select id="list" resultMap="user">
+		SELECT id,usercode,phone,email,pwd,nickname,usertype,valid
+		FROM user_user a
+	</select>
+
+</mapper>

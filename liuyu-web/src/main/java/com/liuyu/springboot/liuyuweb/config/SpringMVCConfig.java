@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
@@ -80,6 +81,12 @@ public class SpringMVCConfig extends WebMvcConfigurationSupport {
         super.addResourceHandlers(registry);
     }
 
+
+    @Override
+    protected void addInterceptors(InterceptorRegistry registry) {
+        //TODO添加自定义的拦截器
+        super.addInterceptors(registry);
+    }
 
     @Bean(name = "viewResolver")
     @Primary
